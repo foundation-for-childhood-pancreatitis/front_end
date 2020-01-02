@@ -7,10 +7,10 @@ import SubmitStory from './components/SubmitStory/SubmitStory';
 import PendingStories from './components/PendingStories/PendingStories';
 import StoriesList from './components/StoriesList/StoriesList';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import LandingPage from "./components/LandingPage/LandingPage";
+import Navigation from "./components/Navigation/Navigation";
+import Footer from './components/LandingPage/Footer/Footer';
 import { getToken } from './utils/api';
-import './App.css';
-
-
 
 function App() {
   const signedIn = getToken()
@@ -27,7 +27,9 @@ function App() {
     {signedIn && <Link to='/logout'>Logout</Link>}
     </nav>
     <GlobalStyles />
+    <Navigation />
       <Switch>
+      <Route exact path="/" component={LandingPage} />
       <Route exact path="/dashboard" component={DashBoard} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path='/stories' component={StoriesList} />
@@ -36,6 +38,7 @@ function App() {
       <PrivateRoute exact path='/logout' component={Logout} />
       <Redirect to="/login" />
       </Switch>
+      <Footer />
     </div>
   );
 }
