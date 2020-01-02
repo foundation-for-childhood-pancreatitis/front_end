@@ -27,6 +27,9 @@ const FooterSection = styled.section`
             color: white;
             background-color: #1178a4;
             text-align: center;
+            &: hover {
+                background-color: #92298d;
+            }
             @media (max-width: 550px) {
                 width: 100vw;
                 margin:1rem 0;
