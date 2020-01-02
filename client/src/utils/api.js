@@ -6,7 +6,7 @@ export function getToken() {
 
 export default function() {
     return axios.create({
-        baseURL: "/",
+        baseURL: "https://pancreatitis-be.herokuapp.com",
         headers: {
             Authorization: getToken(),
         },
