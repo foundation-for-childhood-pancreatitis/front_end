@@ -9,12 +9,13 @@ function App() {
   return (
     <div>
       <GlobalStyles />
+      <LandingPage />
       <Switch>
         <Route exact path="/dashboard" component={DashBoard} />
         <Route exact path="/login" component={LoginPage} />
         <Redirect to="/login" />
       </Switch>
-      <LandingPage />
+      
     </div>
   );
 }
