@@ -8,12 +8,12 @@ import LandingPage from "./components/landing-page/LandingPage";
 function App() {
   return (
     <div>
-      {/* <GlobalStyles />
+      <GlobalStyles />
       <Switch>
         <Route exact path="/dashboard" component={DashBoard} />
         <Route exact path="/login" component={LoginPage} />
         <Redirect to="/login" />
-      </Switch> */}
+      </Switch>
       <LandingPage />
     </div>
   );
