@@ -1,15 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { GlobalStyles } from "../../../components/index";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { NavigationStyles } from "./NavigationStyles";
 
-import hope from "../../../assets/logo/hope.png";
-import logo from "../../../assets/logo/logo-main.png";
+import hope from "../../assets/logo/hope.png";
+import logo from "../../assets/logo/logo-main.png";
 
 const Navigation = () => {
   return (
     <div>
-      <GlobalStyles />
       <NavigationStyles />
       <header>
         
