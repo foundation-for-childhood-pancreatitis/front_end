@@ -5,6 +5,7 @@ import DashBoard from "./components/views/DashBoard";
 import LoginPage from "./components/views/LoginPage";
 import LandingPage from "./components/LandingPage/LandingPage";
 import Navigation from "./components/Navigation/Navigation";
+import Footer from './components/LandingPage/Footer/Footer';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/login" component={LoginPage} />
         <Redirect to="/login" />
       </Switch>
+      <Footer />
     </div>
   );
 }
