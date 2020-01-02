@@ -18,7 +18,7 @@ const Navigation = () => {
         </figure>
        
 
-        <nav className="main-nav">
+        <nav className="main-nav" id="nav">
           <ul>
             <li>
               <Link>About</Link>

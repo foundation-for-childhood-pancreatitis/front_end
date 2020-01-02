@@ -4,7 +4,7 @@ import { GlobalStyles } from "./components/index";
 import DashBoard from "./components/views/DashBoard";
 import LoginPage from "./components/views/LoginPage";
 import LandingPage from "./components/landing-page/LandingPage";
-
+import Footer from "./components/landing-page/footer/footer";
 function App() {
   return (
     <div>
@@ -15,7 +15,7 @@ function App() {
         <Route exact path="/login" component={LoginPage} />
         <Redirect to="/login" />
       </Switch>
-      
+      <Footer />
     </div>
   );
 }
