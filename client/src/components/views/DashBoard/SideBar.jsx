@@ -5,8 +5,7 @@ import { sidebarIcons, sidebarTexts } from "../../../assets/icons/icons";
 import { StyledSidebar } from "./DashBoardLayoutStyles";
 import admin from "../../../assets/about-founders/board_shel.jpg";
 
-class SidebarContainer extends React.Component {
-  render() {
+const SidebarContainer =()=> {
     return (
           <StyledSidebar>
             <ProfileImage name={"Miss Admin"} image={admin} path="/" />
@@ -30,7 +29,6 @@ class SidebarContainer extends React.Component {
             <div className="empty-div" />
           </StyledSidebar>
     );
-  }
 }
 
 export default SidebarContainer;
