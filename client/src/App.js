@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter, Route, Switch, Link, Redirect } from "react-router-dom";
 import { GlobalStyles } from "./components/index";
-import DashBoard from "./components/views/DashBoard";
-import LoginPage from "./components/views/LoginPage";
+import DashBoard from "./components/views/DashBoard/DashBoard";
+import LoginPage from "./components/auth/Login/LoginPage";
 import SubmitStory from './components/SubmitStory/SubmitStory';
 import PendingStories from './components/PendingStories/PendingStories';
 import StoriesList from './components/StoriesList/StoriesList';

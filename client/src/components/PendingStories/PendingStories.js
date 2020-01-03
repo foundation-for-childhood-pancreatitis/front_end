@@ -26,7 +26,7 @@ const PendingStories = () => {
           console.log('StoryToApprove', storyToApprove)
           
           api()
-          .put(`/your_story/${story.id}`, storyToApprove)
+          .put(`/ыtory/${story.id}`, storyToApprove)
           .then(res => {
                console.log('Put Approve req', res)
                dispatch(fetchStoriesPendingData((state.stories.map(item => item.id === res.data.id? res.data:item))))
@@ -36,7 +36,7 @@ const PendingStories = () => {
 
      const deleteStory = story => {
           api()
-          .delete(`/your_story/${story.id}`)
+          .delete(`/story/${story.id}`)
           .then(res => {
                console.log('Del res', res)
               dispatch(fetchStoriesPendingData(state.stories.filter(story => story.id !== res.data)))

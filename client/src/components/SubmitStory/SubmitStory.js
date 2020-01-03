@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../utils/api'
+import { SubmitStoryStyle } from './SubmitStoryStyles';
+// import { Link } from 'react-router-dom'
 import {Form, Field,  withFormik} from 'formik';
 import * as yup from 'yup';
-
+// import '../../index.css';
 
 const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) => {
 
     const [storiesPending, setStoriesPending] = useState([]);
+    // const [isLoading, setLoading] = useState(false);
+    // console.log('Formik props', props);
+
+     
 
     useEffect(() => {
         if(status) {
@@ -16,10 +22,12 @@ const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) 
     }, []);
 
 
-    return (  
+    return (
+        <>
+        <SubmitStoryStyle>
         <div className='story-form'>
-       
-            <h2>Submit Your Story!</h2>
+         {/* <Link to='/'>Home</Link> */}
+            <h2>Tell Us Your Story!</h2>
          <div className='thanks-div'></div>
 
         <Form>
@@ -35,13 +43,7 @@ const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) 
                 <p className='error'>{errors.email}</p>
             )}
 
-            {/* <Field name='phone' type='number' placeholder='Your phone' />
-
-            {touched.phone && errors.phone && (
-                <p className='error'>{errors.email}</p>
-            )} */}
-
-            <Field name='title' type='textarea' placeholder='Title of Your Story' />
+            <Field name='title' type='text' placeholder='Title of Your Story' />
 
            {touched.title && errors.title && (
                <p className='error'>{errors.title}</p>
@@ -64,7 +66,8 @@ const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) 
         </Form>
         
        </div>
-        
+       </SubmitStoryStyle>
+        </>
     );
 }
 
@@ -77,7 +80,7 @@ export default withFormik({
             email: values.email || '',
             title: values.title || '',
             contents: values.contents || '',
-            pending: 0
+            pending: 1
             // comment: values.comment|| '',
         }
     },
@@ -91,7 +94,7 @@ export default withFormik({
 
     handleSubmit(values, { setStatus, props }) {
        api()
-        .post('/your_story', values)
+        .post('/story', values)
         .then(res => {
             console.log('Add Story', res)
             setStatus(res.data);
@@ -101,5 +104,7 @@ export default withFormik({
     }
 
 }) (SubmitStory)
+
+
 
 
