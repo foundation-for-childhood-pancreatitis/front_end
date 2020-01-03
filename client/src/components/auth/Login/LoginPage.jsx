@@ -16,6 +16,7 @@ const LoginPage = () => {
       };
     
     return (
+      <Container>
             <FormContainer>
               <FormTitle>Admin Login</FormTitle>
               <StyledForm
@@ -43,9 +44,12 @@ const LoginPage = () => {
                 <FormButton type="submit">Login</FormButton>
               </StyledForm>
             </FormContainer>
+            </Container>
     );
   };
-
+const Container = styled.div`
+background: rgba(194, 228, 238, 0.931);
+`;
   const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
