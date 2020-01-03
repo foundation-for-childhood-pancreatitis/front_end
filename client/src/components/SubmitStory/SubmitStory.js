@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import api from '../../utils/api'
 import {Form, Field,  withFormik} from 'formik';
 import * as yup from 'yup';
+import '../../index.css';
 
 
 const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) => {
@@ -41,13 +42,13 @@ const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) 
                 <p className='error'>{errors.email}</p>
             )} */}
 
-            <Field name='title' type='textarea' placeholder='Title of Your Story' />
+            {/* <Field name='title' type='textarea' placeholder='Title of Your Story' />
 
            {touched.title && errors.title && (
                <p className='error'>{errors.title}</p>
-           )}
+           )} */}
 
-            <Field component='textarea' name='contents' type='text' placeholder='Enter your story...' />
+            <Field component='textarea' name='story' type='text' placeholder='Enter your story...' />
 
            {touched.story && errors.story && (
                <p className='error'>{errors.story}</p>
@@ -75,8 +76,8 @@ export default withFormik({
         return {
             name: values.name || '',
             email: values.email || '',
-            title: values.title || '',
-            contents: values.contents || '',
+            // title: values.title || '',
+            story: values.contents || '',
             pending: 0
             // comment: values.comment|| '',
         }
