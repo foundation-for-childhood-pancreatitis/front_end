@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import img from "../../../assets/home-carousel/Home_Page_Header-2.jpg";
+import wave from "./wave.svg";
+
 
 export const HeroArea = createGlobalStyle`
     .hero-img-container {
@@ -12,7 +14,7 @@ export const HeroArea = createGlobalStyle`
         justify-content: center;
         align-items: center;
         position: relative;
-        z-index: 0;
+        z-index: 10;
         
 
 
@@ -23,12 +25,12 @@ export const HeroArea = createGlobalStyle`
             position: absolute;
             top: 0;
             left: 0;
-            opacity: 0.6;
+            opacity: 0.8;
             background: #283c86;  
             background: -webkit-linear-gradient( #45a247, #283c86);
             background: radial-gradient(at 20% 375px, #fff, #283c86);
             mix-blend-mode: multiply;
-            z-index: -1;
+            z-index:-1;
         }
 
         div {
@@ -38,6 +40,7 @@ export const HeroArea = createGlobalStyle`
             justify-content: space-around;
             align-items: center;
             flex-direction: column;
+            position: relative;
 
 
             figure {
@@ -69,11 +72,20 @@ export const HeroArea = createGlobalStyle`
                 }
             } //button ends here
         } //div ends here
+
+        .wave-container {
+            position: absolute;
+            bottom: 0px;
+            height: 135px;
+            width: 100%;
+            background: url(${wave}) no-repeat bottom center;
+            background-size: cover;
+            z-index: 0;       
+        }
     }//hero-img-container ends here
 
 
-    .information {
-        
+    .information {  
         width: 100%;
         height: 200px;
         display: flex;
@@ -82,16 +94,12 @@ export const HeroArea = createGlobalStyle`
         color: #fff;
         
         .details {
-            
+            z-index: 10;
             width: 70%;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             padding-top: 60px;
-
-
-
-            
 
             .description {
                 width: 30%;
@@ -100,7 +108,7 @@ export const HeroArea = createGlobalStyle`
                 align-items: flex-start;
                
 
-                svg {
+                .globe-icon {
                     width: 100px;
                     height: 50px;
                     margin-right: 20px;

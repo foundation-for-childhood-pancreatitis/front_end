@@ -4,6 +4,7 @@ import img2 from "../../../assets/project-images/img2.jpg";
 import img3 from "../../../assets/project-images/img3.jpg";
 import img4 from "../../../assets/project-images/img4.jpg";
 import img5 from "../../../assets/project-images/img5.jpg";
+import wave from "./wave.svg";
 
 export const ProjectStyles = createGlobalStyle`
     .projects-container {
@@ -12,6 +13,15 @@ export const ProjectStyles = createGlobalStyle`
         justify-content: center;
         align-items: center;
         flex-direction: column;
+
+        &:after {
+            content: "";
+            height: 100px;
+            width: 100%;
+            background: url(${wave}) no-repeat bottom center;
+            background-size: cover;
+            
+        }
 
         .title {
             width: 60%;
