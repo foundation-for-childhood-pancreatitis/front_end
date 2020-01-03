@@ -54,8 +54,7 @@ const LoginPage = () => {
   justify-content: center;
   align-items: center;
   height: 100%;
-  border-top: 1px solid ${Primary.Purple};
-  margin: 20rem auto;
+  margin: 5rem auto;
 `;
 
 const StyledForm = styled.form`
