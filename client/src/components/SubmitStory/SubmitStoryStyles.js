@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const SubmitStoryStyle = createGlobalStyle `
 body {
   margin-top: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -149,3 +152,4 @@ textarea:hover {
   transform: translateY(-4px) scale(1.03);
 }
 
+`;

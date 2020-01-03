@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../utils/api'
+import { SubmitStoryStyle } from './SubmitStoryStyles';
 // import { Link } from 'react-router-dom'
 import {Form, Field,  withFormik} from 'formik';
 import * as yup from 'yup';
-import '../../index.css';
+// import '../../index.css';
 
 const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) => {
 
@@ -21,7 +22,9 @@ const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) 
     }, []);
 
 
-    return (  
+    return (
+        <>
+        <SubmitStoryStyle />
         <div className='story-form'>
          {/* <Link to='/'>Home</Link> */}
             <h2>Tell Us Your Story!</h2>
@@ -63,7 +66,7 @@ const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) 
         </Form>
         
        </div>
-        
+        </>
     );
 }
 
