@@ -24,7 +24,7 @@ const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) 
 
     return (
         <>
-        <SubmitStoryStyle />
+        <SubmitStoryStyle>
         <div className='story-form'>
          {/* <Link to='/'>Home</Link> */}
             <h2>Tell Us Your Story!</h2>
@@ -66,6 +66,7 @@ const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) 
         </Form>
         
        </div>
+       </SubmitStoryStyle>
         </>
     );
 }

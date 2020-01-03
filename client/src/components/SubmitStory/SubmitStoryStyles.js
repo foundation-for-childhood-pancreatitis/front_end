@@ -1,7 +1,8 @@
-import { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
+import { Tertiary, Secondary, Solid } from '../index'
 
-export const SubmitStoryStyle = createGlobalStyle `
-body {
+export const SubmitStoryStyle = styled.div `
+/* body {
   margin-top: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -9,8 +10,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgba(194, 228, 238, 0.931);
-}
-
+} */
+font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+background: rgba(194, 228, 238, 0.931);
+margin-top: 0;
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -71,20 +76,20 @@ button {
   border: 1px dotted rgb(97, 93, 93);
     border-radius: 10px;
     font-family : sans-serif;
-    font-size   : 100%;
     padding      : 15px 10px 5px 5px;
-    font         : bold .6em sans-serif;
+    font         : bold 1em sans-serif;
     border       : 2px solid #333;
     border-radius: 5px;
-    background   : none;
+    background   : ${Tertiary.DarkGreen};
     cursor       : pointer;
-    -webkit-appearance: none;
+    padding: 0.5em 2em;
+    /* -webkit-appearance: none;
    -webkit-transform: rotate(-1.5deg);
     -moz-transform: rotate(-1.5deg);
     -ms-transform: rotate(-1.5deg);
     -o-transform: rotate(-1.5deg);
     transform: rotate(-1.5deg);
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 10px 10px 5px grey; */
   }
 
   button:after {
@@ -94,8 +99,8 @@ button {
   button:hover,
   button:focus {
     outline   : none;
-    background: #000;
-    color   : #FFF;
+    background: ${Secondary.Orange};
+    color   : ${Solid.WHITE};
   }
   
   input {
@@ -119,6 +124,7 @@ button {
     transition:all 0.5s;
     position: relative;
     z-index: 1;
+    width: 500px;
 }
 
 input:hover {
@@ -146,6 +152,7 @@ justify-content: space-around;
     transition:all 0.5s;
     position: relative;
     z-index: 1;
+    width: 500px;
 }
 
 textarea:hover {
