@@ -61,6 +61,7 @@ export const HeroArea = createGlobalStyle`
                 font-weight: 500;
                 background: #26A0da;
                 color: #fff;
+                cursor: pointer;
 
                 &: hover {
                     background: #5ebb47;

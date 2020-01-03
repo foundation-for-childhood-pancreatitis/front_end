@@ -15,7 +15,6 @@ function App() {
         <Route exact path="/login" component={LoginPage} />
         <Redirect to="/login" />
       </Switch>
-      
     </div>
   );
 }
