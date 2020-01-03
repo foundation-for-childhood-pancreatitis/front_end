@@ -82,7 +82,8 @@ export const HeroArea = createGlobalStyle`
             background-size: cover;
             z-index: 0;       
         }
-    }//hero-img-container ends here
+    }
+    /*hero-img-container ends here*/
 
 
     .information {  
@@ -138,6 +139,6 @@ export const HeroArea = createGlobalStyle`
             }
 
 
-        }//details ends here
-    } //information ends here
+        }/*details ends here*/
+    }/*information ends here*/
 `;
