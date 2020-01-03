@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const NavigationStyles = createGlobalStyle`
   header {
@@ -9,6 +9,7 @@ export const NavigationStyles = createGlobalStyle`
     align-items: center;
     padding: 0 10px;
     position: relative;
+    z-index: 10;
    
 
     .main-logo{
