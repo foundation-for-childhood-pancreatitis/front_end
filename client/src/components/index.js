@@ -1,4 +1,10 @@
-export { Solid, Gradient, Primary, Secondary, Tertiary } from './variables/colors';
+export {
+  Solid,
+  Gradient,
+  Primary,
+  Secondary,
+  Tertiary
+} from "./variables/colors";
 export {
   type,
   baseFontSize,
@@ -7,7 +13,26 @@ export {
   h2FontSize,
   h3FontSize,
   h4FontSize,
-} from './variables/fonts';
-export { Spacing } from './variables/spacing';
+  heading1,
+  heading2,
+  heading3,
+  heading4,
+  heading5,
+  bodyHero,
+  body1,
+  body2,
+  buttonText
+} from "./variables/fonts";
+export {
+  Spacing,
+  extraSmallSpace,
+  smallSpace,
+  mediumSpace1,
+  mediumSpace2,
+  mediumSpace3,
+  largeSpace,
+  extraLargeSpace
+} from "./variables/spacing";
+export { tabletMaxWidth, mobileMaxWidth, deskTopMaxWidth, mediumMaxWidth, largeWidth, extraLargeWidth } from "./variables/media-query";
 
-export { GlobalStyles } from './styles/GlobalStyles';
+export { GlobalStyles } from "./styles/GlobalStyles";
