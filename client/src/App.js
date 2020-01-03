@@ -24,6 +24,8 @@ function App() {
     <div>
     <nav>
     {!signedIn && <Link to='/pending'>Pending</Link>}
+    {!signedIn && <Link to='/stories'>Stories</Link>}
+    {!signedIn && <Link to='/submitstory'>Submit</Link>}
     {!signedIn && <Link to='/logout'>Logout</Link>}
     </nav>
     <GlobalStyles />

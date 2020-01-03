@@ -9,10 +9,11 @@ import api from '../../utils/api'
 const PendingStories = () => {
     //  console.log('PendingList props', props)
     const state = useSelector(state => state)
+    console.log('Pending state', state)
      const dispatch = useDispatch()
      // const [approving, setApproving] = useState(false)
      const [storyToApprove, setStoryToApprove] = useState({
-        approve: false})
+        approved: true})
 
           useEffect(() => {
                dispatch(fetchStoriesPendingData())
@@ -22,14 +23,14 @@ const PendingStories = () => {
 
      const saveApprove = story => {
           // e.preventDefault()
-          setStoryToApprove({...story, approve: true})
+          setStoryToApprove({...story, approved: true})
           console.log('StoryToApprove', storyToApprove)
           
           api()
           .put(`/story/${story.id}`, storyToApprove)
           .then(res => {
                console.log('Put Approve req', res)
-               dispatch(fetchStoriesPendingData((state.stories.map(item => item.id === res.data.id? res.data:item))))
+               dispatch(fetchStoriesPendingData((state.stories.map(item => item.id === res.data.data.id? res.data.data:item))))
           })
           .catch(err => console.log('Put Approve err', err.response))
      }
@@ -39,7 +40,7 @@ const PendingStories = () => {
           .delete(`/story/${story.id}`)
           .then(res => {
                console.log('Del res', res)
-              dispatch(fetchStoriesPendingData(state.stories.filter(story => story.id !== res.data)))
+              dispatch(fetchStoriesPendingData(state.stories.filter(story => story.id !== res.data.data)))
           })
           .catch(err => console.log(err.response))
      }
@@ -51,10 +52,9 @@ const PendingStories = () => {
                <div className='list'>
                     {state.stories.map(i => (
                          <div className='story' key={i.id}>
-                              <h2>{i.title}</h2> 
                               <h4>Username:{i.name}</h4>
                               <h4>Email:{i.email}</h4>
-                              <p>{i.contents} </p>
+                              <p>{i.story} </p>
                               <span>
                               <button onClick={() => {saveApprove(i)}}>Approve</button>
                               </span>
