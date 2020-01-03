@@ -11,6 +11,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import Navigation from "./components/Navigation/Navigation";
 import Footer from './components/LandingPage/Footer/Footer';
 import { getToken } from './utils/api';
+import PaymentDonation from './components/Donations/Payment';
 
 function App() {
   const signedIn = getToken()
@@ -30,6 +31,7 @@ function App() {
     <Navigation />
       <Switch>
       <Route exact path="/" component={LandingPage} />
+      <Route exact path="/donate" component={PaymentDonation} />
       <Route exact path="/dashboard" component={DashBoard} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path='/stories' component={StoriesList} />
