@@ -24,7 +24,7 @@ const LoginPage = () => {
               >
                 <input type="hidden" name="form-name" value="login" />
                 <TextInput
-                  type={"text"}
+                  type={"email"}
                   title="Email"
                   className="form-control mb-4"
                   id="title"
@@ -33,7 +33,7 @@ const LoginPage = () => {
                   onChange={handleInputChange}
                 />
                 <TextInput
-                  type={"email"}
+                  type={"password"}
                   title="Password"
                   className="form-control mb-4"
                   id="title"

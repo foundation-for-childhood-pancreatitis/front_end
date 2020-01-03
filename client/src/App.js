@@ -23,8 +23,8 @@ function App() {
   return (
     <div>
     <nav>
-    {signedIn && <Link to='/pending'>Pending</Link>}
-    {signedIn && <Link to='/logout'>Logout</Link>}
+    {!signedIn && <Link to='/pending'>Pending</Link>}
+    {!signedIn && <Link to='/logout'>Logout</Link>}
     </nav>
     <GlobalStyles />
     <Navigation />
@@ -33,9 +33,9 @@ function App() {
       <Route exact path="/dashboard" component={DashBoard} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path='/stories' component={StoriesList} />
-      <PrivateRoute exact path='/pending' component={PendingStories} />
+      <Route exact path='/pending' component={PendingStories} />
       <Route exact path='/submitstory' component={SubmitStory} />
-      <PrivateRoute exact path='/logout' component={Logout} />
+      <Route exact path='/logout' component={Logout} />
       <Redirect to="/login" />
       </Switch>
       <Footer />

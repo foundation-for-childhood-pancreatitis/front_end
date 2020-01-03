@@ -12,7 +12,7 @@ const PendingStories = () => {
      const dispatch = useDispatch()
      // const [approving, setApproving] = useState(false)
      const [storyToApprove, setStoryToApprove] = useState({
-        pending: 1})
+        approve: false})
 
           useEffect(() => {
                dispatch(fetchStoriesPendingData())
@@ -22,11 +22,11 @@ const PendingStories = () => {
 
      const saveApprove = story => {
           // e.preventDefault()
-          setStoryToApprove({...story, pending: 1})
+          setStoryToApprove({...story, approve: true})
           console.log('StoryToApprove', storyToApprove)
           
           api()
-          .put(`/ыtory/${story.id}`, storyToApprove)
+          .put(`/story/${story.id}`, storyToApprove)
           .then(res => {
                console.log('Put Approve req', res)
                dispatch(fetchStoriesPendingData((state.stories.map(item => item.id === res.data.id? res.data:item))))

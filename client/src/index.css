@@ -1,0 +1,24 @@
+
+.list {
+  display: flex;
+  flex-flow: wrap;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.list :hover {
+transform: translateY(-4px) scale(1.01);  
+}
+
+.story{
+  background-color:rgba(169, 226, 236, 0.931);
+  border: 0;
+  box-shadow: 0 -1px 0 #e0e0e0, 0 0 5px rgba(0, 0, 0, 0.12),
+    0 5px 8px rgba(0, 0, 0, 0.24);
+  padding: 1rem;
+  cursor: pointer;
+  position: relative;
+  margin: 1rem auto;
+}

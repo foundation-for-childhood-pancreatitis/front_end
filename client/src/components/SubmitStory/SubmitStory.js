@@ -43,13 +43,13 @@ const SubmitStory = ({errors, touched, values, status, handleReset, ...props }) 
                 <p className='error'>{errors.email}</p>
             )}
 
-            <Field name='title' type='text' placeholder='Title of Your Story' />
+            {/* <Field name='title' type='text' placeholder='Title of Your Story' />
 
            {touched.title && errors.title && (
                <p className='error'>{errors.title}</p>
-           )}
+           )} */}
 
-            <Field component='textarea' name='contents' type='text' placeholder='Enter your story...' />
+            <Field component='textarea' name='story' type='text' placeholder='Enter your story...' />
 
            {touched.story && errors.story && (
                <p className='error'>{errors.story}</p>
@@ -78,15 +78,15 @@ export default withFormik({
         return {
             name: values.name || '',
             email: values.email || '',
-            title: values.title || '',
-            contents: values.contents || '',
-            pending: 1
+            // title: values.title || '',
+            story: values.story || '',
+            // pending: 1
             // comment: values.comment|| '',
         }
     },
     validationSchema: yup.object().shape({
-        title: yup.string().required('Fill out this field!'),
-        contents: yup.string().required('Fill out this field!'),
+        // title: yup.string().required('Fill out this field!'),
+        story: yup.string().required('Fill out this field!'),
         name: yup.string().required('Fill out this field!'),
         email: yup.string().email('Email not valid!').required()
     }),
