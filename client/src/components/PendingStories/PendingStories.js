@@ -30,7 +30,7 @@ const PendingStories = () => {
           .put(`/story/${story.id}`, storyToApprove)
           .then(res => {
                console.log('Put Approve req', res)
-               dispatch(fetchStoriesPendingData((state.stories.map(item => item.id === res.data.data.id? res.data.data:item))))
+               dispatch(fetchStoriesPendingData((state.stories.map(item => item.id === res.data.id? res.data:item))))
           })
           .catch(err => console.log('Put Approve err', err.response))
      }
