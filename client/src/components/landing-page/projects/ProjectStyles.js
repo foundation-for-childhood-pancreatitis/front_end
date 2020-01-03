@@ -40,11 +40,11 @@ export const ProjectStyles = createGlobalStyle`
                 a {
                     text-decoration: none;
                     font-size: 2.5rem;
-                    color: orange;
+                    color: #eb7424;
                     font-weight: 500;
 
                     &:hover {
-                        border-bottom: 1px solid orange;
+                        border-bottom: 1px solid #eb7424;
                     }
                 }
 
@@ -104,14 +104,22 @@ export const ProjectStyles = createGlobalStyle`
                     align-items: center;
                     flex-direction: column;
 
+
+                    h3 {
+                        font-size: 3rem;
+                        color: white;
+                        margin-bottom: 40px;
+                        text-align: center;
+                    }
+
+                    span {
+                        color: #eb7424;
+                        font-weight: 600;
+                    }
+
                 }
 
-                h3 {
-                    font-size: 3rem;
-                    color: white;
-                    margin-bottom: 40px;
-                    text-align: center;
-                }
+
 
                 button {
                     text-transform: uppercase;
