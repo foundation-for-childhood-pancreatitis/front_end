@@ -49,7 +49,7 @@ const Navigation = () => {
             <li className="dropdown">
               <Link>Donate</Link>
               <ul className="dropdown-list">
-                <Link>Make a Donation</Link>
+                <Link to="/donate">Make a Donation</Link>
               </ul>
             </li>
           </ul>
