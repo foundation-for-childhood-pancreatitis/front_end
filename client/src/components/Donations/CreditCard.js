@@ -12,7 +12,6 @@ import {
   const CardDiv = styled.div`
     display: flex;
     flex-direction: column;
-    /* flex-wrap: wrap; */
     @media (max-width: 550px) {
         width: 90vw;
         margin: 1rem;
@@ -20,7 +19,7 @@ import {
     }
   `;
   
-  const Payment = () => (
+  const Payment = ({amount}) => (
     <CardDiv>
     
         <fieldset className="sq-fieldset">
@@ -39,7 +38,7 @@ import {
         </fieldset>
     
         <CreditCardSubmitButton>
-            Pay $1.00
+            Pay ${amount}
         </CreditCardSubmitButton>
     
     </CardDiv>
