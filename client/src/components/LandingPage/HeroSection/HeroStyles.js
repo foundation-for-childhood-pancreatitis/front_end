@@ -66,9 +66,10 @@ export const HeroArea = createGlobalStyle`
                     background: #5ebb47;
                     transition: 0.5s
                 }
-            } //button ends here
-        } //div ends here
-    }//hero-img-container ends here
+            } /*button ends here*/
+        } /*div ends here*/
+    }
+    /*hero-img-container ends here*/
 
 
     .information {
@@ -129,6 +130,6 @@ export const HeroArea = createGlobalStyle`
             }
 
 
-        }//details ends here
-    } //information ends here
+        }/*details ends here*/
+    }/*information ends here*/
 `;
