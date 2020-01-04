@@ -12,7 +12,9 @@ const Navigation = () => {
       <header>
         
         <figure className="main-logo">
-          <img src={logo} alt="main-logo"/>
+          <Link to="/">
+             <img src={logo} alt="main-logo"/>
+          </Link>
         </figure>
        
 
@@ -49,7 +51,7 @@ const Navigation = () => {
             <li className="dropdown">
               <Link>Donate</Link>
               <ul className="dropdown-list">
-                <Link>Make a Donation</Link>
+                <Link to="/donate">Make a Donation</Link>
               </ul>
             </li>
           </ul>

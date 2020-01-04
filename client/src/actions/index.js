@@ -8,9 +8,9 @@ export function fetchStoriesData() {
     return dispatch => {
         dispatch({ type: GET_STORIES_DATA_START })
         api()
-        .get('/stories')
+        .get('/story')
         .then(res => {console.log("RES STORIES", res)
-            dispatch({ type:GET_STORIES_DATA_SUCCESS, payload: res.data.filter(item => item.pending === 0) })})
+            dispatch({ type:GET_STORIES_DATA_SUCCESS, payload: res.data.data.filter(item => item.approved === true) })})
         .catch(err => {
             dispatch({ type: GET_STORIES_DATA_FAILURE, payload: err.response})
         })
@@ -25,9 +25,9 @@ export function fetchStoriesPendingData() {
     return dispatch => {
         dispatch({ type: GET_STORIES_PENDING_DATA_START })
         api()
-        .get('/stories')
+        .get('/story')
         .then(res => {console.log("RES PENDING STORIES", res)
-            dispatch({ type:GET_STORIES_PENDING_DATA_SUCCESS, payload: res.data.filter(item => item.pending === 1) })})
+            dispatch({ type:GET_STORIES_PENDING_DATA_SUCCESS, payload: res.data.data.filter(item => item.approved === false) })})
         .catch(err => {
             dispatch({ type: GET_STORIES_PENDING_DATA_FAILURE, payload: err.response})
         })

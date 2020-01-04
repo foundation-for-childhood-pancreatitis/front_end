@@ -11,6 +11,7 @@ import LandingPage from "./components/LandingPage/LandingPage";
 import Navigation from "./components/Navigation/Navigation";
 import Footer from './components/LandingPage/Footer/Footer';
 import { getToken } from './utils/api';
+import PaymentDonation from './components/Donations/Payment';
 
 function App() {
   const signedIn = getToken()
@@ -23,19 +24,22 @@ function App() {
   return (
     <div>
     <nav>
-    {signedIn && <Link to='/pending'>Pending</Link>}
-    {signedIn && <Link to='/logout'>Logout</Link>}
+    {!signedIn && <Link to='/pending'>Pending</Link>}
+    {!signedIn && <Link to='/stories'>Stories</Link>}
+    {!signedIn && <Link to='/submitstory'>Submit</Link>}
+    {!signedIn && <Link to='/logout'>Logout</Link>}
     </nav>
     <GlobalStyles />
     <Navigation />
       <Switch>
       <Route exact path="/" component={LandingPage} />
+      <Route exact path="/donate" component={PaymentDonation} />
       <Route exact path="/dashboard" component={DashBoard} />
       <Route exact path="/login" component={LoginPage} />
       <Route exact path='/stories' component={StoriesList} />
-      <PrivateRoute exact path='/pending' component={PendingStories} />
+      <Route exact path='/pending' component={PendingStories} />
       <Route exact path='/submitstory' component={SubmitStory} />
-      <PrivateRoute exact path='/logout' component={Logout} />
+      <Route exact path='/logout' component={Logout} />
       <Redirect to="/login" />
       </Switch>
       <Footer />
