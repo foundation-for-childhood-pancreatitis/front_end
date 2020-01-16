@@ -5,6 +5,9 @@ import styled from 'styled-components';
 import CardDetails from './CreditCard';
 import Variables from '../variables';
 import axios from '../../utils/api';
+import  dotenv from 'dotenv'
+import {REACT_APP_APPLICATION_ID,REACT_APP_LOCATION_ID} from '../../.env'
+
 
 
 const SquareForm = styled.div`
@@ -97,8 +100,8 @@ export default function PaymentPage() {
             
             <SquarePaymentForm
                 sandbox={true}
-                applicationId={process.env.REACT_APP_APPLICATION_ID}
-                locationId={process.env.REACT_APP_LOCATION_ID}
+                applicationId={REACT_APP_APPLICATION_ID}
+                locationId={REACT_APP_LOCATION_ID}
                 cardNonceResponseReceived={cardNonceResponseReceived}
                 createVerificationDetails={createVerificationDetails}
             >
